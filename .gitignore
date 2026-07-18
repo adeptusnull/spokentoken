@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Node and test output
+node_modules/
+coverage/
+.coverage
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+
+# Generated media and packages
+*.aiff
+*.wav
+*.zip
+dist/
+
+# Editor state
+.idea/
+.vscode/

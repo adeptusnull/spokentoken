@@ -1,0 +1,10 @@
+{
+  "name": "spoken-token-reader",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A private Chromium extension that reads webpages with a local speech engine.",
+  "scripts": {
+    "check": "node --check extension/service-worker.js && node --check extension/offscreen.js && node --check extension/content-script.js && node --check extension/text-utils.js && node --check extension/popup.js && node --check extension/options.js",
+    "test": "node --test tests/*.test.mjs"
+  }
+}

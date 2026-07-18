@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spoken Token</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header class="topbar">
+        <div class="brand">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M4 18v-4M10 23V9M16 27V5M22 23V9M28 18v-4"/>
+          </svg>
+          <span>Spoken Token</span>
+        </div>
+        <div class="local-status" title="Speech stays on this computer">
+          <span class="status-dot coral"></span>
+          <span>On this Mac</span>
+        </div>
+      </header>
+
+      <section class="page-summary" aria-live="polite">
+        <h1 id="page-title">Open a webpage to begin</h1>
+        <p id="page-host">Local, private reading</p>
+      </section>
+
+      <p id="notice" class="notice" role="status" hidden></p>
+
+      <section class="playback" aria-label="Playback">
+        <div class="transport">
+          <button id="previous" class="icon-button transport-side" type="button" aria-label="Previous paragraph">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 5v14M18 6l-8 6 8 6z"/>
+            </svg>
+          </button>
+          <button id="play" class="play-button" type="button" aria-label="Read this page">
+            <svg id="play-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg id="pause-icon" viewBox="0 0 24 24" aria-hidden="true" hidden>
+              <path d="M7 5h4v14H7zM14 5h4v14h-4z"/>
+            </svg>
+            <span class="spinner" id="spinner" hidden></span>
+          </button>
+          <button id="next" class="icon-button transport-side" type="button" aria-label="Next paragraph">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 5v14M6 6l8 6-8 6z"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="progress-track" aria-hidden="true">
+          <span id="progress-fill"></span>
+        </div>
+        <p id="progress-label" class="progress-label">Ready to read</p>
+      </section>
+
+      <section class="controls">
+        <div class="control-row speed-heading">
+          <label for="speed">Speed</label>
+          <output id="speed-value" for="speed">1.0×</output>
+        </div>
+        <div class="speed-control">
+          <button id="speed-down" class="speed-step" type="button" aria-label="Read slower">−</button>
+          <input id="speed" class="range" type="range" min="0.7" max="1.5" step="0.1" value="1">
+          <button id="speed-up" class="speed-step" type="button" aria-label="Read faster">+</button>
+        </div>
+
+        <div class="control-row voice-row">
+          <label for="voice">Voice</label>
+          <select id="voice">
+            <option value="af_heart">Heart</option>
+            <option value="af_bella">Bella</option>
+            <option value="af_sky">Sky</option>
+            <option value="am_michael">Michael</option>
+            <option value="am_adam">Adam</option>
+            <option value="bf_emma">Emma</option>
+            <option value="bm_george">George</option>
+          </select>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="connection">
+          <span id="connection-dot" class="status-dot green"></span>
+          <span id="connection-label">Kokoro connected · localhost</span>
+        </div>
+        <button id="settings" class="icon-button settings-button" type="button" aria-label="Open Spoken Token settings">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm8.4 3.5a7.8 7.8 0 0 0-.1-1l2-1.5-2-3.4-2.4 1a8.2 8.2 0 0 0-1.8-1L15.8 3h-4l-.4 3.1a8.2 8.2 0 0 0-1.8 1l-2.4-1-2 3.4 2 1.5a7.8 7.8 0 0 0 0 2l-2 1.5 2 3.4 2.4-1a8.2 8.2 0 0 0 1.8 1l.4 3.1h4l.4-3.1a8.2 8.2 0 0 0 1.8-1l2.4 1 2-3.4-2-1.5a7.8 7.8 0 0 0 .1-1z"/>
+          </svg>
+        </button>
+      </footer>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+services:
+  kokoro:
+    image: ghcr.io/remsky/kokoro-fastapi-cpu:v0.5.0
+    container_name: spoken-token-kokoro
+    ports:
+      - "127.0.0.1:8880:8880"
+    environment:
+      LOG_LEVEL: WARNING
+    restart: unless-stopped

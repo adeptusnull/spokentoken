@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spoken Token settings</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main class="settings-shell">
+      <header>
+        <div class="brand">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M4 18v-4M10 23V9M16 27V5M22 23V9M28 18v-4"/>
+          </svg>
+          <span>Spoken Token</span>
+        </div>
+        <h1>Settings</h1>
+        <p>Connect the reader to a speech engine running on this computer.</p>
+      </header>
+
+      <form id="settings-form">
+        <label for="endpoint">Local speech endpoint</label>
+        <input id="endpoint" name="endpoint" type="url" spellcheck="false" required>
+        <p class="hint">For privacy, only localhost, 127.0.0.1, and ::1 are accepted.</p>
+
+        <div class="two-column">
+          <div>
+            <label for="model">Model</label>
+            <input id="model" name="model" type="text" required>
+          </div>
+          <div>
+            <label for="max-length">Text per request</label>
+            <select id="max-length" name="maxLength">
+              <option value="400">Short · fastest response</option>
+              <option value="700">Balanced</option>
+              <option value="1000">Long · fewer pauses</option>
+            </select>
+          </div>
+        </div>
+
+        <section class="privacy-note">
+          <strong>Local-only lock is on.</strong>
+          <p>The extension cannot connect to cloud speech services, even if a remote URL is entered here.</p>
+        </section>
+
+        <div class="actions">
+          <button id="test" class="secondary" type="button">Test voice</button>
+          <button class="primary" type="submit">Save settings</button>
+        </div>
+        <p id="status" class="form-status" role="status"></p>
+      </form>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>
