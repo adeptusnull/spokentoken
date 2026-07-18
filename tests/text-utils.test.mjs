@@ -1,16 +1,9 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
-import path from "node:path";
 import test from "node:test";
-import vm from "node:vm";
-import { fileURLToPath } from "node:url";
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const source = await readFile(path.join(root, "extension", "text-utils.js"), "utf8");
-const context = { globalThis: {} };
-vm.runInNewContext(source, context);
+import "../extension/text-utils.js";
 
-const { normalizeText, chunkText } = context.globalThis.SpokenTokenText;
+const { normalizeText, chunkText } = globalThis.SpokenTokenText;
 
 test("normalizes webpage whitespace without joining words", () => {
   assert.equal(
