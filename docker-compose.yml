@@ -1,6 +1,6 @@
 services:
   kokoro:
-    image: ghcr.io/remsky/kokoro-fastapi-cpu:v0.5.0@sha256:bcf38f9bf7f040b0465dd4352eb0fa0b2db42d4bd91eba16acef0b40e5c57905
+    image: ghcr.io/remsky/kokoro-fastapi-cpu:v0.6.0@sha256:d2c63627e80e32df7fab7f1e969c2b6b26272439d837ef195f40d4a82eca195e
     container_name: spoken-token-kokoro
     ports:
       - "127.0.0.1:8880:8880"
